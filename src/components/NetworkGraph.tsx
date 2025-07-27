@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
-import { GraphNode, GraphLink, Intellectual, Connection } from '../types';
+import type { GraphNode, GraphLink, Intellectual, Connection } from '../types';
 
 interface NetworkGraphProps {
   intellectuals: Intellectual[];
@@ -106,7 +106,7 @@ const NetworkGraph: React.FC<NetworkGraphProps> = ({ intellectuals, connections,
       .attr('stroke', '#fff')
       .attr('stroke-width', 2)
       .style('cursor', 'pointer')
-      .on('click', (event, d) => {
+      .on('click', (_event, d) => {
         if (onNodeClick) {
           onNodeClick(d);
         }

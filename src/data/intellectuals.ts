@@ -1,4 +1,5 @@
-import { Intellectual, Connection, ConnectionType } from '../types';
+import type { Intellectual, Connection } from '../types';
+import { ConnectionType } from '../types';
 
 export const intellectuals: Intellectual[] = [
   {

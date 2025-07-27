@@ -1,5 +1,5 @@
 import React from 'react';
-import { Intellectual } from '../types';
+import type { Intellectual } from '../types';
 
 interface IntellectualCardProps {
   intellectual: Intellectual;

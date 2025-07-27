@@ -18,13 +18,15 @@ export interface Connection {
   description?: string;
 }
 
-export enum ConnectionType {
-  INFLUENCED = 'influenced',
-  COLLABORATED = 'collaborated',
-  STUDIED_UNDER = 'studied_under',
-  CONTEMPORARY = 'contemporary',
-  INSPIRED_BY = 'inspired_by',
-}
+export const ConnectionType = {
+  INFLUENCED: 'influenced',
+  COLLABORATED: 'collaborated',
+  STUDIED_UNDER: 'studied_under',
+  CONTEMPORARY: 'contemporary',
+  INSPIRED_BY: 'inspired_by',
+} as const;
+
+export type ConnectionType = typeof ConnectionType[keyof typeof ConnectionType];
 
 export interface GraphNode extends Intellectual {
   x?: number;
@@ -33,7 +35,7 @@ export interface GraphNode extends Intellectual {
   fy?: number | null;
 }
 
-export interface GraphLink extends Connection {
+export interface GraphLink extends Omit<Connection, 'source' | 'target'> {
   source: GraphNode | string;
   target: GraphNode | string;
 }

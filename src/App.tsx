@@ -2,7 +2,7 @@ import { useState } from 'react'
 import NetworkGraph from './components/NetworkGraph'
 import IntellectualCard from './components/IntellectualCard'
 import { intellectuals, connections } from './data/intellectuals'
-import { GraphNode } from './types'
+import type { GraphNode } from './types'
 import './App.css'
 
 function App() {
