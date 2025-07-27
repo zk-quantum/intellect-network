@@ -1,0 +1,188 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+}
+
+.app-header {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.app-header p {
+  margin: 0.5rem 0 0;
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+.app-main {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.graph-container {
+  width: 100%;
+  height: calc(100vh - 140px);
+  background: white;
+  position: relative;
+}
+
+.app-footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.app-footer p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Intellectual Card Styles */
+.card-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.intellectual-card {
+  background: white;
+  height: 100%;
+  overflow-y: auto;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  background: #1a1a1a;
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.close-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.info-section {
+  margin-bottom: 1.5rem;
+}
+
+.info-section strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.field-tag {
+  background: #e0e0e0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.achievements-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.achievements-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.wiki-link {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s;
+}
+
+.wiki-link:hover {
+  color: #1565c0;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .card-overlay {
+    width: 100%;
+  }
+  
+  .graph-container {
+    height: calc(100vh - 120px);
+  }
+}
